@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Text Summarization Application</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>📝 Text Summarization Application</h1>
+
+        <p class="subtitle">
+            Enter a long text and generate a short summary.
+        </p>
+
+        <form method="POST">
+
+            <textarea
+                name="text"
+                placeholder="Enter your text here..."
+                required>{{ original_text }}</textarea>
+
+            <button type="submit">
+                Generate Summary
+            </button>
+
+        </form>
+
+        {% if summary %}
+
+        <div class="result">
+
+            <h2>📌 Summary</h2>
+
+            <p>{{ summary }}</p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>
